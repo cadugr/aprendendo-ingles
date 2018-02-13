@@ -20,7 +20,12 @@ export class TentativasComponent implements OnInit, OnChanges {
    }
 
   ngOnChanges() {
-    console.log('Tentativas recebidas do painel: ', this.tentativas)
+    if (this.coracoes.length !== this.tentativas) {
+      let indice = this.coracoes.length - this.tentativas
+
+      this.coracoes[indice - 1].cheio = false 
+
+    }
   } 
 
   ngOnInit() {
